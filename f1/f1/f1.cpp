@@ -49,4 +49,12 @@ int main(void){
 /* RETURNS  : none                                          */
 /* ======================================================== */
 
-
+void printFlightInfo(FlightInfo flights[]) {
+    int i;
+    int count = 10;
+    for (i = 0; i < count; i++)
+    {
+        printf("%-35s", flights[i].destination);
+        printf("%35s\n", flights[i].date);
+    }
+}
