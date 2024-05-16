@@ -39,6 +39,25 @@ int main(void){
 /* RETURNS  : none                                                  */
 /* ================================================================ */
 
+void fillFlightInfo(FlightInfo* flightsPtr, char* userTypeDestination, char* userTypeDate) {
+
+    flightsPtr->destination = (char*)malloc(strlen(userTypeDestination) + 1);
+    if (flightsPtr->destination == NULL) {
+        printf("Out of memory\n");
+        return;
+    }
+    strcpy(flightsPtr->destination, userTypeDestination);
+
+    flightsPtr->date = (char*)malloc(strlen(userTypeDate) + 1);
+    if (flightsPtr->date == NULL) {
+        printf("Out of memory\n");
+        return;
+    }
+    strcpy(flightsPtr->date, userTypeDate);
+
+}
+
+
 
 
 /* ======================================================== */
