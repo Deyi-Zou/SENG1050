@@ -26,3 +26,27 @@ int main(void){
                                
     return 0;
 }
+
+
+/* ================================================================ */
+/* FUNCTION : fillFlightInfo( flightsPtr, destination, date)        */
+/* PURPOSE  : This function is to allocate dynamic memory for       */
+/*            the fields of flight struct                           */
+/* INPUTS   : temPtr - a pointer to the flights struct array        */
+/*            userTypeDestination - a string containing info of     */
+/*                                  destination                     */
+/*            userTypeDate - a string containing info of date       */
+/* RETURNS  : none                                                  */
+/* ================================================================ */
+
+
+
+/* ======================================================== */
+/* FUNCTION : printFlightInfo( flights)                     */
+/* PURPOSE  : This function shows the info of each flight   */
+/*            in the struct                                 */
+/* INPUTS   : flights - a struct array contains flight info */
+/* RETURNS  : none                                          */
+/* ======================================================== */
+
+
