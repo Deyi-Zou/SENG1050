@@ -23,6 +23,41 @@ void fillFlightInfo(FlightInfo* flightsPtr, char* userTypeDestination, char* use
 void printFlightInfo(FlightInfo flights[]);
 
 int main(void){
+    struct FlightInfo flights[10] = { 0 };
+    FlightInfo* flightsPtr = flights;
+
+    char userTypeDestination[MAX_STRING_LENGTH];
+    char userTypeDate[MAX_STRING_LENGTH];
+
+    printf("Please input ten pairs of flights information:\n");
+
+    int i;
+    int count = 10;
+    for (i = 0; i < count; i++)
+    {
+        fgets(userTypeDestination, MAX_STRING_LENGTH, stdin);
+        char* whereCR = strchr(userTypeDestination, '\n'); // clear CR
+        if (whereCR != NULL)
+        {
+            *whereCR = '\0';
+        }
+        fgets(userTypeDate, MAX_STRING_LENGTH, stdin);
+        char* whereCR1 = strchr(userTypeDate, '\n');
+        if (whereCR1 != NULL)
+        {
+            *whereCR1 = '\0';
+        }
+        fillFlightInfo(&flightsPtr[i], userTypeDestination, userTypeDate);
+
+    }
+
+    printFlightInfo(flights);
+
+    for (i = 0; i < count; i++)
+    {
+        free(flightsPtr[i].destination);
+        free(flightsPtr[i].date);
+    }
                                
     return 0;
 }
